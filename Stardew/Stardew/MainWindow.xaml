@@ -1,0 +1,123 @@
+﻿<Window x:Class="Stardew.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Stardew"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="1000">
+    <Grid>
+
+        <!-- header -->
+        <Grid Height="70" VerticalAlignment="Top" Background="#FF97D1DE" Panel.ZIndex="1">
+            <TextBlock Text="Stardew Valley Profits" FontWeight="Bold" FontSize="25pt" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        </Grid>
+
+        <Grid ShowGridLines="True" Margin="0,70,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="4*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- nav -->
+            <Grid Grid.Column="0" HorizontalAlignment="Left" Width=""">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Content="Spring" />
+                <Button Grid.Row="1" Content="Summer" />
+                <Button Grid.Row="2" Content="Fall" />
+                <Button Grid.Row="3" Content="Winter" />
+            </Grid>
+            
+            <!-- content -->
+            <Grid Grid.Column="1">
+                <StackPanel>
+
+                    <TextBlock Text="fruit name" FontWeight="Bold" FontSize="20pt" />
+
+                    <!-- Number of days -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column ="0" Text="Number of days: " FontWeight="Bold" />
+                        <TextBox Grid.Column ="1" Padding="2" Background="#eee" Margin="0 0 0 5" />
+                    </Grid>
+
+                    <!-- Number of crops -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Number of crops: " FontWeight="Bold" />
+                        <TextBox Grid.Column="1" Padding="2" Background="#eee" Margin="0 5 0 5" />
+                    </Grid>
+
+                    <!-- Fertilizer -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Fertilizer:" FontWeight="Bold" />
+                        <ComboBox Grid.Column="1" Padding="2" Margin="0 5 0 5" />
+                    </Grid>
+
+
+                    <!-- Produce type -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Produce type:" FontWeight="Bold" />
+                        <ComboBox Grid.Column="1" Padding="2" Margin="0 5 0 5"/>
+                    </Grid>
+                    <!-- Seed price -->
+                    <TextBlock Text="Seed price: " FontWeight="Bold" />
+
+                    <!-- Farming level -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="2*" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="Farming level:" FontWeight="Bold" />
+                        <TextBox Grid.Column="1" Background="#eee" Margin="0 5 0 5" />
+                    </Grid>
+
+                    <!-- Farming level skills -->
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <!-- Level 5 -->
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Level 5:" />
+                            <CheckBox Content="Tiller" />
+                        </StackPanel>
+
+                        <!-- Level 10 -->
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Level 10:" />
+                            <CheckBox  Content="Agriculturist" />
+                            <CheckBox  Content="Artisan" />
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- save -->
+                    <Button Content="Save" Margin="0 10 0 0" />
+                </StackPanel>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</Window>
