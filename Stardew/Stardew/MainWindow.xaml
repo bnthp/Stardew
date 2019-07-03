@@ -6,38 +6,53 @@
         xmlns:local="clr-namespace:Stardew"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1000">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="Black" Offset="0"/>
+            <GradientStop Color="#FF9C4CDE" Offset="0.981"/>
+            <GradientStop Color="#FF22289E" Offset="0.375"/>
+        </LinearGradientBrush>
+    </Window.Background>
     <Grid>
 
         <!-- header -->
-        <Grid Height="70" VerticalAlignment="Top" Background="#FF97D1DE" Panel.ZIndex="1">
-            <TextBlock Text="Stardew Valley Profits" FontWeight="Bold" FontSize="25pt" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Grid Height="110" VerticalAlignment="Top" Panel.ZIndex="1" Margin="0 10 0 0">
+
+            <Image Source="img/layout/header-large.png"/>
+
+            <!-- <TextBlock Text="Stardew Valley Crop Profits" FontSize="48" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Stardew Valley" Grid.Column="1" Margin="103,9,254,8" Foreground="White"/> -->
         </Grid>
 
-        <Grid ShowGridLines="True" Margin="0,70,0,0">
+        <Grid ShowGridLines="False" Margin="0,110,0,0" >
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
 
             <!-- nav -->
-            <Grid Grid.Column="0" HorizontalAlignment="Left" Width=""">
+            <Grid Grid.Column="0" HorizontalAlignment="Left" Width="200">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
-                <Button Grid.Row="0" Content="Spring" />
-                <Button Grid.Row="1" Content="Summer" />
-                <Button Grid.Row="2" Content="Fall" />
-                <Button Grid.Row="3" Content="Winter" />
+                <Image Grid.Row="0" Source="img/layout/spring.png" />
+                <Image Grid.Row="1" Source="img/layout/summer.png" />
+                <Image Grid.Row="2" Source="img/layout/fall.png" />
+                <Image Grid.Row="3" Source="img/layout/winter.png" />
+                <!--<Button Grid.Row="0" Content="spring" FontFamily="Stardew Valley" FontSize="36"/>
+                <Button Grid.Row="1" Content="summer" FontFamily="Stardew Valley" FontSize="36" />
+                <Button Grid.Row="2" Content="fall" FontFamily="Stardew Valley" FontSize="36"/>
+                <Button Grid.Row="3" Content="winter" FontFamily="Stardew Valley" FontSize="36"/>-->
             </Grid>
-            
+
             <!-- content -->
-            <Grid Grid.Column="1">
+            <Grid Grid.Column="1" Margin="10,0,10,0">
                 <StackPanel>
 
-                    <TextBlock Text="fruit name" FontWeight="Bold" FontSize="20pt" />
+                    <TextBlock Text="Strawberry" FontSize="36" FontFamily="Stardew Valley" Foreground="White" Margin="0 45 0 10"/>
 
                     <!-- Number of days -->
                     <Grid>
@@ -45,7 +60,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column ="0" Text="Number of days: " FontWeight="Bold" />
+                        <TextBlock Grid.Column ="0" Text="Number of days: " FontWeight="Bold" Foreground="White" />
                         <TextBox Grid.Column ="1" Padding="2" Background="#eee" Margin="0 0 0 5" />
                     </Grid>
 
@@ -55,7 +70,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Number of crops: " FontWeight="Bold" />
+                        <TextBlock Grid.Column="0" Text="Number of crops: " FontWeight="Bold" Foreground="White" />
                         <TextBox Grid.Column="1" Padding="2" Background="#eee" Margin="0 5 0 5" />
                     </Grid>
 
@@ -65,7 +80,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Fertilizer:" FontWeight="Bold" />
+                        <TextBlock Grid.Column="0" Text="Fertilizer:" FontWeight="Bold" Foreground="White" />
                         <ComboBox Grid.Column="1" Padding="2" Margin="0 5 0 5" />
                     </Grid>
 
@@ -76,11 +91,11 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Produce type:" FontWeight="Bold" />
+                        <TextBlock Grid.Column="0" Text="Produce type:" FontWeight="Bold" Foreground="White" />
                         <ComboBox Grid.Column="1" Padding="2" Margin="0 5 0 5"/>
                     </Grid>
                     <!-- Seed price -->
-                    <TextBlock Text="Seed price: " FontWeight="Bold" />
+                    <TextBlock Text="Seed price: " FontWeight="Bold" Foreground="White" />
 
                     <!-- Farming level -->
                     <Grid>
@@ -88,7 +103,7 @@
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="2*" />
                         </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Column="0" Text="Farming level:" FontWeight="Bold" />
+                        <TextBlock Grid.Column="0" Text="Farming level:" FontWeight="Bold" Foreground="White" />
                         <TextBox Grid.Column="1" Background="#eee" Margin="0 5 0 5" />
                     </Grid>
 
@@ -101,15 +116,15 @@
 
                         <!-- Level 5 -->
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="Level 5:" />
-                            <CheckBox Content="Tiller" />
+                            <TextBlock Text="Level 5:" Foreground="White" />
+                            <CheckBox Content="Tiller" Foreground="White" />
                         </StackPanel>
 
                         <!-- Level 10 -->
                         <StackPanel Grid.Column="1">
-                            <TextBlock Text="Level 10:" />
-                            <CheckBox  Content="Agriculturist" />
-                            <CheckBox  Content="Artisan" />
+                            <TextBlock Text="Level 10:" Foreground="White" />
+                            <CheckBox  Content="Agriculturist" Foreground="White" />
+                            <CheckBox  Content="Artisan" Foreground="White" />
                         </StackPanel>
                     </Grid>
 
